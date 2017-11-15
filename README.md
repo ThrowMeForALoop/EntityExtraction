@@ -1,2 +1,2 @@
 # EntityExtraction
-Team project for extracting entities and their link
+Team project for extracting entities and their links
