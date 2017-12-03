@@ -1,17 +1,21 @@
 # EntityExtraction
 Team project (Group 5) for extracting entities and their links
 
-- To run your project, please use the following commands:
+To run entirely your project, please use the following commands:
 
 Come to your source directory:
 
 		 cd FinalProject/
 
-Run application with Standford Stack:
+1) If you want to test with small group of data (take(10)), please use command below:
+
+		./runnable_take10.sh
+
+Run entirely  application with Standford Stack:
 
 		./run_standford.sh (This script will run your application in yarn cluster and use StandfordNER.jar to find entities => slower but more accurate than nltk chunk)
 
-To run application with Nltk module (similar function to Standford Stack):
+Or Run application with Nltk module (similar function to Standford Stack):
 
 		./run_nltk.sh
 
