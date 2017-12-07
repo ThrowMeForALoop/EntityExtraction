@@ -11,11 +11,11 @@ Come to your source directory:
 
 		./runnable_take10.sh
 
-Run entirely  application with Standford Stack:
+2) Run entirely  application with Standford Stack:
 
 		./run_standford.sh (This script will run your application in yarn cluster and use StandfordNER.jar to find entities => slower but more accurate than nltk chunk)
 
-Or Run application with Nltk module (similar function to Standford Stack):
+2') Or Run application with Nltk module (similar function to Standford Stack):
 
 		./run_nltk.sh
 
