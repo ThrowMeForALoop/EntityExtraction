@@ -1,0 +1,27 @@
+1st case (simple) specific query:
+SELECT * WHERE PERSON = "John"
+result: ['Richard goes to Brazil for vacations every year but he lives in Seatle.']
+
+2nd case (using relations):
+SELECT * WHERE ORGANIZATION "located" GPE
+result: ['John works at Microsoft which is located in San Francisco in United States.', 'John teaches at Xerox located in New York in United States.', 'The Dutch National Bank is located in Amsterdam capital of Netherlands.', 'John works at Microsoft which is located in Amsterdam capital of Netherlands.']
+
+3rd case (using relations) showing that we are not forcing results:
+SELECT * WHERE PERSON "located" GPE
+['Eduard is located in San Francisco in United States.']
+
+4th case (using logical operators)
+SELECT * WHERE PERSON = "John" and PERSON "work" ORGANIZATION and ORGANIZATION = "Microsoft"
+result: ['John works at Microsoft which is located in San Francisco in United States.', 'John works at Microsoft which is located in Amsterdam capital of Netherlands.']
+
+5th case (using log operators and two specific queries)
+SELECT * WHERE PERSON = "John" AND PERSON "work" ORGANIZATION AND ORGANIZATION = "Microsoft" AND ORGANIZATION "located" GPE AND GPE = "Amsterdam"
+result: ['John works at Microsoft which is located in Amsterdam capital of Netherlands.']
+
+6th case (to show what happens when GPE = "Amsterdam is not used")
+SELECT * WHERE PERSON = "John" AND PERSON "work" ORGANIZATION AND ORGANIZATION = "Microsoft" AND ORGANIZATION "located" GPE
+result: ['John works at Microsoft which is located in San Francisco in United States.', 'John works at Microsoft which is located in Amsterdam capital of Netherlands.']
+
+7th case (to show OR operator):
+SELECT * WHERE PERSON = "John" AND PERSON "work" ORGANIZATION AND ORGANIZATION = "Microsoft" OR GPE = "Brazil"
+result: ['Richard goes to Brazil for vacations every year but he lives in Seatle.', 'John works at Microsoft which is located in San Francisco in United States.', 'John works at Microsoft which is located in Amsterdam capital of Netherlands.']
